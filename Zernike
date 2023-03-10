@@ -1,0 +1,108 @@
+clc; clear all; close all;
+
+n = 3; m = 0;           % Define the order and the repetition of the moment
+
+disp('------------------------------------------------');
+disp(['Calculating Zernike moments ..., n = ' num2str(n) ', m = ' num2str(m)]);
+% img=imread("C:\Users\ADMIN\Documents\MATLAB\LGONBP-master\rmbsER.tif");
+image_folder = 'E:\icmmb\segmented output_25000\Ciclo_00_25000\'; 
+filenames = dir(fullfile(image_folder, '*.tif'));  
+ total_images = numel(filenames); 
+ zertot=[];
+ zertotz=[];
+for k = 1:total_images
+  f = fullfile(image_folder, filenames(k).name);
+img = imread(f);
+% p=imbinarize(img);
+p = logical(not(img));
+tic
+[~,AOH,PhiOH] = Zernikmoment(p,n,m); % Call Zernikemoment fuction
+[Z]=Zernikmoment(p,n,m);
+ zertot(k,:)= [AOH, PhiOH];
+zertotz(k,:)=Z;
+end
+
+image_folder = 'E:\icmmb\segmented output_25000\Ciclo_0.625_25000\'; 
+filenames = dir(fullfile(image_folder, '*.tif'));  
+ total_images = numel(filenames); 
+ zertot_1=[];
+ zertotz_1=[];
+for k = 1:total_images
+  f = fullfile(image_folder, filenames(k).name);
+img = imread(f);
+% p=imbinarize(img);
+p = logical(not(img));
+tic
+[~,AOH,PhiOH] = Zernikmoment(p,n,m); % Call Zernikemoment fuction
+[Z_1]=Zernikmoment(p,n,m);
+ zertot_1(k,:)= [AOH, PhiOH];
+zertotz_1(k,:)=Z_1;
+end
+
+image_folder = 'E:\icmmb\segmented output_25000\Ciclo_1.2_25000\'; 
+filenames = dir(fullfile(image_folder, '*.tif'));  
+ total_images = numel(filenames); 
+ zertot_2=[];
+ zertotz_2=[];
+for k = 1:total_images
+  f = fullfile(image_folder, filenames(k).name);
+img = imread(f);
+% p=imbinarize(img);
+p = logical(not(img));
+tic
+[~,AOH,PhiOH] = Zernikmoment(p,n,m); % Call Zernikemoment fuction
+[Z_2]=Zernikmoment(p,n,m);
+ zertot_2(k,:)= [AOH, PhiOH];
+zertotz_2(k,:)=Z_2;
+end
+
+image_folder = 'E:\icmmb\segmented output_25000\Ciclo_2.5_25000\'; 
+filenames = dir(fullfile(image_folder, '*.tif'));  
+ total_images = numel(filenames); 
+ zertot_3=[];
+ zertotz_3=[];
+for k = 1:total_images
+  f = fullfile(image_folder, filenames(k).name);
+img = imread(f);
+% p=imbinarize(img);
+p = logical(not(img));
+tic
+[~,AOH,PhiOH] = Zernikmoment(p,n,m); % Call Zernikemoment fuction
+[Z_3]=Zernikmoment(p,n,m);
+ zertot_3(k,:)= [AOH, PhiOH];
+zertotz_3(k,:)=Z_3;
+end
+
+image_folder = 'E:\icmmb\segmented output_25000\Ciclo_5_25000\'; 
+filenames = dir(fullfile(image_folder, '*.tif'));  
+ total_images = numel(filenames); 
+ zertot_4=[];
+ zertotz_4=[];
+for k = 1:total_images
+  f = fullfile(image_folder, filenames(k).name);
+img = imread(f);
+% p=imbinarize(img);
+p = logical(not(img));
+tic
+[~,AOH,PhiOH] = Zernikmoment(p,n,m); % Call Zernikemoment fuction
+[Z_4]=Zernikmoment(p,n,m);
+ zertot_4(k,:)= [AOH, PhiOH];
+zertotz_4(k,:)=Z_4;
+end
+
+image_folder = 'E:\icmmb\segmented output_25000\Ciclo_10_25000\'; 
+filenames = dir(fullfile(image_folder, '*.tif'));  
+ total_images = numel(filenames); 
+ zertot_5=[];
+ zertotz_5=[];
+for k = 1:total_images
+  f = fullfile(image_folder, filenames(k).name);
+img = imread(f);
+% p=imbinarize(img);
+p = logical(not(img));
+tic
+[~,AOH,PhiOH] = Zernikmoment(p,n,m); % Call Zernikemoment fuction
+[Z_5]=Zernikmoment(p,n,m);
+ zertot_5(k,:)= [AOH, PhiOH];
+zertotz_5(k,:)=Z_5;
+end
