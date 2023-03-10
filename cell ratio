@@ -1,0 +1,25 @@
+clc;
+clear all;
+% path_directory='CICLO_CONC_10'; % 'Folder name' Must be in current directory
+%    original_files=dir([path_directory '/*.tif']);
+% ratioN1=[];
+%    for k=1:length(original_files)
+%  filename=[path_directory '/' original_files(k).name
+filename='003009001.tif'
+img=imread(filename);
+img1=imadjust(img);
+imshow(img1);
+imhist(img1);
+
+%%
+thresh =25000
+imgThr1=img1>thresh;
+% imgThr1=img1<thresh(2)
+imshow(imgThr1);
+imgThr1Bin=uint16(imgThr1);
+imgThr1BinVect=imgThr1Bin(:);
+onesN=find(imgThr1BinVect);
+zerosN=length(imgThr1BinVect)-length(onesN);
+ratioN= length(onesN) /zerosN ;
+% ratioN1(k,:)=ratioN;
+%    end
